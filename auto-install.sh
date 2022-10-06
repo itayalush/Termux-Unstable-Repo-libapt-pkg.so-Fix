@@ -8,13 +8,13 @@ else
    echo "Done! Now Downloading..."
 fi
 
-curl http://mirrors.sdu.edu.cn/termux/termux-main/pool/main/w/wget/wget_1.21.3-3_"$(uname -m)".deb -o wget.deb | sed "$,(echo "Downloading wget..."),"
-dpkg -i wget.deb | sed "$,(echo "Installing wget..."),"
+curl http://mirrors.sdu.edu.cn/termux/termux-main/pool/main/w/wget/wget_1.21.3-3_"$(uname -m)".deb -o wget.deb | head -q | echo "Downloading wget..."
+dpkg -i wget.deb | head -q | echo "Installing wget..."
 rm wget.deb
-wget https://github.com/itayalush/Termux-Unstable-Repo-libapt-pkg.so-Fix/releases/download/"$(uname -m)"/apt_termux.deb | sed "$,(echo "Downloading apt..."),"
-wget https://github.com/itayalush/Termux-Unstable-Repo-libapt-pkg.so-Fix/releases/download/"$(uname -m)"/libc++_termux.deb | sed "$,(echo "Downloading libc++..."),"
+wget https://github.com/itayalush/Termux-Unstable-Repo-libapt-pkg.so-Fix/releases/download/"$(uname -m)"/apt_termux.deb | head -q | echo "Downloading apt..."
+wget https://github.com/itayalush/Termux-Unstable-Repo-libapt-pkg.so-Fix/releases/download/"$(uname -m)"/libc++_termux.deb | head -q | echo "Downloading libc++..."
 echo "Installing..."
-dpkg -i apt_termux.deb | sed "$,(echo "Installing apt..."),"
-dpkg -i libc++_termux.deb | sed "$,(echo "Installing libc++..."),"
+dpkg -i apt_termux.deb | head-q | echo "Installing apt..."
+dpkg -i libc++_termux.deb | head -q | echo "Installing libc++..."
 rm apt_termux.deb
 rm libc++_termux.deb
