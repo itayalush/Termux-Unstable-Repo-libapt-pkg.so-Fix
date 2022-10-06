@@ -1,11 +1,23 @@
 Everyone that entered this Github Repo asks:
 How to fix Termux apt error with libapt-pkg.so?
 
+
 Now you can fix it without any problem.
 
-First, Download the files from Releases,
-Then, Go to Termux,
-After that, Run the command below:
+First, Go to Termux and Run a command:
+> uname -m
+
+Then, See what the command said,
+
+If it said aarch64, Download the two .deb files from "Files for aarch64" in Releases.
+
+If it said "arm", Download the two .deb files from "Files for arm" in Releases.
+
+If it said i686, Download the two .deb files from "Files for i686" in Releases.
+
+If it said x86_64, Download the two .deb files from "Files for x86_64" in Releases.
+
+After you downloaded the files, Go to Termux again,
 
 Now run the command below for the apt_termux.deb file:
 > dpkg -i /sdcard/Download/apt_termux.deb
