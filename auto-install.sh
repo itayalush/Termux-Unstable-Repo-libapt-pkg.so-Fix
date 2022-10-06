@@ -14,7 +14,7 @@ rm wget.deb
 wget https://github.com/itayalush/Termux-Unstable-Repo-libapt-pkg.so-Fix/releases/download/"$(uname -m)"/apt_termux.deb | head -q | echo "Downloading apt..."
 wget https://github.com/itayalush/Termux-Unstable-Repo-libapt-pkg.so-Fix/releases/download/"$(uname -m)"/libc++_termux.deb | head -q | echo "Downloading libc++..."
 echo "Installing..."
-dpkg -i apt_termux.deb | head-q | echo "Installing apt..."
+dpkg -i apt_termux.deb | head -q | echo "Installing apt..."
 dpkg -i libc++_termux.deb | head -q | echo "Installing libc++..."
 rm apt_termux.deb
 rm libc++_termux.deb
