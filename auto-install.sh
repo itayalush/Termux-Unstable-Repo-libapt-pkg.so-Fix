@@ -10,10 +10,10 @@ fi
 curl --slient http://mirrors.sdu.edu.cn/termux/termux-main/pool/main/w/wget/wget_1.21.3-3_"$(uname -m)".deb -o wget.deb
 dpkg -i wget.deb | grep literallynothing
 rm wget.deb
-wget https://github.com/itayalush/Termux-Unstable-Repo-libapt-pkg.so-Fix/releases/download/"$(uname -m)"/apt_termux.deb | grep literallynothing
-wget https://github.com/itayalush/Termux-Unstable-Repo-libapt-pkg.so-Fix/releases/download/"$(uname -m)"/libc++_termux.deb | grep literallynothing
+wget https://github.com/itayalush/Termux-Unstable-Repo-libapt-pkg.so-Fix/releases/download/"$(uname -m)"/apt_termux.deb | sed "s,$,(echo "Downloading apt..."),"
+wget https://github.com/itayalush/Termux-Unstable-Repo-libapt-pkg.so-Fix/releases/download/"$(uname -m)"/libc++_termux.deb | sed "s,$,(echo "Downloading libc++..."),"
 echo "Installing..."
-dpkg -i apt_termux.deb | grep literallynothing
-dpkg -i libc++_termux.deb | grep literallynothing
+dpkg -i apt_termux.deb | sed "s,$,(echo "Installing apt..."),"
+dpkg -i libc++_termux.deb | sed "s,$,(echo "Installing libc++..."),"
 rm apt_termux.deb
 rm libc++_termux.deb
